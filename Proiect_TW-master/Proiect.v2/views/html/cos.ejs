@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Order online</title>
+		<link rel="stylesheet" type="text/css" href="CSS/header.css">
+		<link rel="stylesheet" type="text/css" href="CSS/order.css">
+		<link rel="stylesheet" type="text/css" href="CSS/footer.css">
+		<link rel="stylesheet" type="text/css" href="CSS/cos.css">
+        <script src="Javascript/cerereAjax.js"></script>
+            <script src="Javascript/cos.js"></script>
+        <script src="Javascript/order.js"></script>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Costrun Larisa">
+		<meta name="description" content="Comenzi online cu livrare la domiciliu">
+		<meta name="keywords" content="comenzi,online,livrare">
+		<link rel="shortcut icon" type="image/x-icon" href="Imagini/./favicon.ico"/>
+		<style>
+		html{
+		scroll-behavior:smooth;
+	
+		}
+	
+		</style>
+	</head>
+	<body >
+		 <%-include("../fragmente/header.ejs")%>
+<div class="wrapper">
+<div class="container">
+		<div class="bara_prod">
+            
+			<h3 class="produs">PRODUS</h3>
+			<h3 class="pret">PRET</h3>
+			<h3 class="cantitate">CANTITATE</h3>
+			<h3 class="total">TOTAL</h3>
+		</div>
+    <div class="products">Cosul dumneavostra este gol.</div>
+    <div class="val"><span></span></div>
+</div>
+<div class="formular">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+            <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
+        </div>
+          <div class="social-icons">
+        <img src="Imagini/fb.png">
+        <img src="Imagini/tw.png">
+        <img src="Imagini/gp.png">
+    </div>
+        <% if(!locals.username) { %>
+<form method="post" action="/login"id="login" class="input-group">
+            <input type="text" name="username" class="input-field" placeholder="User Id" required>
+            <input type="password" name="parola"class="input-field" placeholder="Password" required>
+            <input type="checkbox" class="check-box" id="logged" name="logged" required><span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit-btn">Log in</button>
+        </form>
+    <% }
+	else { %>
+        <span id="hide">Cont: <%= locals.username %>  |<a href="/logout">Log out</a></span>
+	<% } %>
+        	<% if(!locals.rsstatus) { %><!-- verific daca status e definit-->
+		<form method="post" id="register" class="input-group" action="/inreg" class="date"> 
+    
+            <input type="text"  name="username" class="input-field" placeholder="User Id" required>
+            <input type="email" class="input-field" placeholder="E-mail" name="email" required>
+            <input type="password" name="parola" class="input-field" placeholder="Password" required>
+            <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit-btn">Sign up</button>
+        </form>
+        	<% } else if(rsstatus=="ok"){ %>
+			<p>Date introduse</p>
+		<% } else {%>
+			<p>Eroare</p>
+		<% } %>
+    </div>  
+</div>
+</div>
+<div class="container2">
+    <h1>Detalii cos cumparaturi</h1>
+        <h2>JSON</h2>
+    <p>Continut JSON</p>
+		<!-- aici se va afisa continutul neprocesat al JSON-ului -->
+		<div class="afis" id="afisJson">
+    </div>
+		
+    <p >Cu template:</p>
+        <button type="button" class="btn" onclick="sorteazaNume()">Sorteaza dupa nume</button>
+        <button type="button" class="btn" onclick="sorteazaPret()">Sorteaza dupa pret</button>
+        <button type="button" class="btn" onclick="inStoc()">Doar produse in stoc</button>
+        <button type="button" class="btn" onclick="valoareProd()">Valoare produse=..</button>
+		<div class="afis" id="afisTemplate">
+
+    </div>
+</div>
+
+	<footer>
+		<h2>Contact</h2>
+			<address id="contact">
+				<p>Calea Floreasca nr. 60, București, România.</p>
+				<p>E-mail:<a href="mailto:g.meronne@restaurant.ro">g.meronne@restaurant.ro</a></p>
+				<p>Telefon:0336750011.</p>
+				<a href="/#sectiune11" >Before you contact us,be sure wheter the answer is on the page or not!Jump to the first page!</a>
+			</address>
+		<div class="restaurant2"></div>
+		</footer>
+			
+	</body>
+</html>

@@ -1,0 +1,212 @@
+div{display:block;}
+#continut {
+	padding:0px 0px 10px 15px;
+	margin-left:-50px;
+}
+
+body{
+background-color:#F5F5DC;
+}
+
+#continut>h2{
+	font-size:3vw;
+	text-align:center;
+	border-bottom:3px solid black;
+}
+#sectiunea5>h4{
+border-top: 5px double;
+width:50%;
+margin-left:170px;
+border-bottom:5px double;
+FONT-FAMILY:New Century Schoolbook, TeX Gyre Schola, serif;}
+
+
+#sectiunea4,#sectiunea5,#sectiunea3,#sectiuneaspec{
+padding:0px;
+}
+
+.grid-container-intro{
+	display:grid;
+	justify-content:flex-start;
+	grid-template-columns: auto auto;	
+}
+.grid_contentIntro
+{
+  font-size: 1.5vw;
+  text-align: center;
+ 	z-index:1;
+	position:absolute; 
+	background: rgba(255,255,255);
+	opacity:0.8;
+	border-radius:100%;
+	margin-left:9%;
+	transition:background-color 1s;
+	height:40px;
+	width:20%;
+}
+
+.grid_contentIntro:hover{
+	background: rgba(255,255,255);
+	opacity:1;
+}
+.grid_contentIntro>.texte h2{
+margin-top:-4vw;}
+.galerie1,.meniu1,.order1,.tabla1{
+background-size:cover;
+background-repeat:no-repeat;
+width:100%;
+  margin-top: -40px;
+  font-size: 1.5vw;
+  text-align: center;
+ transition: .3s ease;
+ position:relative;
+ padding:0px;
+
+}
+.galerie1:hover,.meniu1:hover,.order1:hover,.tabla1:hover{
+font-size:20px;
+text-align:center;
+ position:relative;
+	
+}
+
+#sectiuneaIntro4,#sectiuneaIntro5,#sectiuneaIntro3,#sectiuneaIntrospec{
+padding:0px;
+}
+
+.grid-container{
+	display:grid;
+	width:100%;
+	justify-content:flex-start;
+	grid-template-columns: 34% 	34% 	34%;
+	margin-left:0%;
+}
+.grid_content
+{
+	font-size: 16px;
+	text-align: center-left;
+	z-index:1;
+	width:25.7%;
+	margin-left:-15px;
+	transition:.5s ease;
+	position:absolute;
+	background: rgba(255,255,255);
+	transition:.5s ease;
+	overflow:hidden;
+	margin-top:19%;
+	z-index:100;
+}
+
+#sectiuneaspec>.grid_content p,#sectiunea3>.grid_content p,#sectiunea4>.grid_content p,#sectiunea5>.grid_content p{
+	margin-top:0%;
+	position:absolute;
+	overflow:hidden;
+	transition:.5s ease;
+	}
+
+#sectiuneaspec>.grid_content h4,#sectiunea3>.grid_content h4,#sectiunea4>.grid_content h4,#sectiunea5>.grid_content h4{
+	margin-top:-8%;
+	position:absolute;
+}
+
+.galerie,.meniu,.order,.tabla{
+background-size:cover;
+background-repeat:no-repeat;
+
+width:100%;
+/*height:400px;*/
+  margin-top: -40px;
+  font-size: 1.5vw;
+  text-align: center;
+ transition: .3s ease;
+ position:relative;
+ margin-left:-45px;
+}
+#sectiuneaspec:hover .galerie,#sectiunea3:hover .meniu,#sectiunea4:hover .order,#sectiunea5:hover .tabla{
+	
+width:110%;
+font-size:20px;
+text-align:center;
+ position:relative;
+z-index:9;
+}
+#sectiuneaspec:hover{
+width:100%;}
+#sectiuneaspec:hover .grid_content,#sectiunea3:hover .grid_content,#sectiunea4:hover .grid_content,#sectiunea5:hover .grid_content{
+	overflow:visible;
+	height:70px;
+	width:28.7%;
+	z-index:1000;
+}
+#sectiuneaspec>.galerie:hover .grid_content,.meniu:hover .grid_content,.order:hover .grid_content,.tabla:hover .grid_content{
+	overflow:visible;
+	z-index:1000;
+}
+.texte{
+	text-decoration:none;
+	color:#000000;
+}
+.add-cart{
+margin-top:-22px;
+height:24px;
+width:24px;
+overflow:hidden;
+float:right;
+position:absolute;
+margin-left:67%;}
+.grid_content b{
+	margin-top:35px;
+	position:absolute;
+	margin-left:50%;}
+}
+
+#sectiunea4>.order-container>p
+{	
+	margin-top:-200px;
+}
+@viewport{
+	width: 320px auto;
+}
+@-ms-viewport{
+	width:extend-to-zoom;
+	zoom: 1.0;
+}
+
+@media screen and (max-width:1316px){
+	.grid-container-intro{
+
+	display:block;
+	}
+	.grid-container,.grid_content,.add-cart{
+		display:inline-flex;
+		flex-wrap:wrap;
+	}
+	.grid_content{
+		font-size:12px;
+	}
+	.grid_content b{
+		margin-left:0%;
+	}
+	.galerie,.meniu,.order,.tabla{
+		width:80%;
+	}
+	#sectiuneaspec:hover .galerie,#sectiunea3:hover .meniu,#sectiunea4:hover .order,#sectiunea5:hover .tabla{
+		width:92%;
+	}
+	#sectiuneaspec:hover .grid_content,#sectiunea3:hover .grid_content,#sectiunea4:hover .grid_content,#sectiunea5:hover .grid_content{
+		width:50%;
+		/*font-size:1.5vw;*/
+	}
+
+}
+@media screen and (max-width:1500px){
+    .grid-container{
+        width:100%;
+    }
+}
+@media screen and (max-width:900px){
+        .add-cart{
+        margin-left:60%;
+            margin-top:0px;
+    }
+}
